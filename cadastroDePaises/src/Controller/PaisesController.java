@@ -20,6 +20,16 @@ public class PaisesController {
 		listaDePaises.add(pais);
 	}
 	
+	public boolean removerPaises(String nome) {
+		for(Paises i:this.listaDePaises) {
+			if(i.getNome().equals(nome)) {
+				listaDePaises.remove(i);
+				return true ;
+			}
+		}
+		return false;
+	}
+	
 	public void exibirListaDePaises() {
 		paisesView.exibirPaises(listaDePaises);
 	}

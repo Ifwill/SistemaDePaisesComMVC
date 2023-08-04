@@ -8,13 +8,15 @@ public class Main {
 	
 	public static void exibirMenu() {
 		System.out.println("--------menu-------");
-		System.out.println("1-Adicionar pais.");
-		System.out.println("2-Listar paises.");
-		System.out.println("3-Sair.");
+		System.out.println("1-Adicionar Pais.");
+		System.out.println("2-Listar Paises.");
+		System.out.println("3-Remover Pais.");
+		System.out.println("0-Sair.");
 	}
 
 	public static void main(String[] args) {
 		int escolhaMenu = 0;
+		int numeroPais = 0;
 		String nomePais, capitalDoPais;
 		
 		Scanner lerDados = new Scanner(System.in);
@@ -40,10 +42,15 @@ public class Main {
 			break;
 		case 2:
 			paisesController.exibirListaDePaises();
-			
+			break;
+		case 3:
+			System.out.println("escolha o numero do pais que vc deseja remover:");
+			nomePais = lerDados.next();
+			paisesController.removerPaises(nomePais);
+			break;
 		}
 			
-		}while(escolhaMenu != 3);
+		}while(escolhaMenu != 0);
 		
 		System.err.println("saindo....");
 		
