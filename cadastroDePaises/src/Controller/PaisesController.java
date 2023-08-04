@@ -20,14 +20,27 @@ public class PaisesController {
 		listaDePaises.add(pais);
 	}
 	
+	/* metodo para remover um pais da lista, com o for para percorer a lista.
+	 * o comando equalsIgnoreCase serve para iguinorar se o usuario escrevel 
+	 * em maiusculo ou minusculo na hora da verificação.
+	 */
 	public boolean removerPaises(String nome) {
 		for(Paises i:this.listaDePaises) {
-			if(i.getNome().equals(nome)) {
+			if(i.getNome().equalsIgnoreCase(nome)) {
 				listaDePaises.remove(i);
+				System.out.println();
+				System.out.println("Pais removido!!");
 				return true ;
 			}
 		}
+		System.out.println("");
+		System.out.println("Pais nao encontrado!!");
 		return false;
+	}
+	
+	public void limparLista() {
+		listaDePaises.clear();
+		System.out.println("lista limpa!!");
 	}
 	
 	public void exibirListaDePaises() {

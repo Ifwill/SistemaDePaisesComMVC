@@ -7,10 +7,12 @@ import Controller.PaisesController;
 public class Main {
 	
 	public static void exibirMenu() {
+		System.out.println();
 		System.out.println("--------menu-------");
 		System.out.println("1-Adicionar Pais.");
 		System.out.println("2-Listar Paises.");
 		System.out.println("3-Remover Pais.");
+		System.out.println("4-Limpar lista.");
 		System.out.println("0-Sair.");
 	}
 
@@ -23,9 +25,7 @@ public class Main {
 		
 		PaisesController paisesController = new PaisesController();
 		
-		
-		do {
-			
+		do {	
 		exibirMenu();
 		System.out.println();
 		System.out.println("Digite sua escolha: ");
@@ -34,7 +34,7 @@ public class Main {
 		switch (escolhaMenu) {
 		
 		case 1:
-			System.out.println("escolha um pais que vc deseja add: ");
+			System.out.println("Escolha um pais que voce deseja adicionar: ");
 			nomePais = lerDados.next();
 			System.out.println("Capital do pais: ");
 			capitalDoPais = lerDados.next();
@@ -44,19 +44,18 @@ public class Main {
 			paisesController.exibirListaDePaises();
 			break;
 		case 3:
-			System.out.println("escolha o numero do pais que vc deseja remover:");
+			System.out.println("escolha o pais que voce deseja remover:");
 			nomePais = lerDados.next();
 			paisesController.removerPaises(nomePais);
 			break;
+		case 4:
+			paisesController.limparLista();
 		}
 			
 		}while(escolhaMenu != 0);
 		
 		System.err.println("saindo....");
 		
-		
-		
-
 	}
 
 }
