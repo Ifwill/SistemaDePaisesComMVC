@@ -1,23 +1,44 @@
 package view;
 
 import java.util.List;
+import java.util.Scanner;
 
 import model.Paises;
 
 public class PaisesView {
-	
-	
-	public void exibirPaises(List<Paises>paises) {
+
+	public void exibirPaises(List<Paises> paises) {
 		System.out.println("------lista de paises------");
 		System.out.println("");
-		for(Paises pais: paises) {
-			System.out.println("Pais: "+pais.getNome()+"\nCapital: "+pais.getCapital());
+		for (Paises pais : paises) {
+			System.out.println("Pais: " + pais.getNome() + "\nCapital: " + pais.getCapital());
 			System.out.println("---------------------------");
 		}
 	}
-	
-	public void opcao() {
+
+	public void opcaoP() {
 		System.out.println("escolha um pais:");
+	}
+
+	public void opcaoC() {
+		System.out.println("capital do pais:");
+	}
+
+	public int menu(Scanner scanner) {
+		System.out.println();
+		System.out.println("--------menu-------");
+		System.out.println("1-Adicionar Pais.");
+		System.out.println("2-Listar Paises.");
+		System.out.println("3-Remover Pais.");
+		System.out.println("4-Limpar lista.");
+		System.out.println("0-Sair.");
+		System.out.println();
+		System.out.println("Digite sua escolha: ");
+		return scanner.nextInt();
+	}
+
+	public void saida() {
+		System.err.println("Saindo...");
 	}
 
 }
