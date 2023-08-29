@@ -6,6 +6,13 @@ import java.util.Scanner;
 import model.Paises;
 
 public class PaisesView {
+	private Scanner scanner;
+	
+	
+
+	public PaisesView() {
+		scanner =  new Scanner(System.in);
+	}
 
 	public void exibirPaises(List<Paises> paises) {
 		System.out.println("------lista de paises------");
@@ -24,7 +31,7 @@ public class PaisesView {
 		System.out.println("capital do pais:");
 	}
 
-	public int menu(Scanner scanner) {
+	public int menu() {
 		System.out.println();
 		System.out.println("--------menu-------");
 		System.out.println("1-Adicionar Pais.");
@@ -39,6 +46,17 @@ public class PaisesView {
 
 	public void saida() {
 		System.err.println("Saindo...");
+	}
+
+	public String getNome() {
+		System.out.println("Digite o nome: ");
+		return scanner.next();
+		
+	}
+
+	public String getCapital() {
+		System.out.println("Digite o Capital: ");
+		return scanner.next();
 	}
 
 }

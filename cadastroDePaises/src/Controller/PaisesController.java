@@ -16,20 +16,35 @@ public class PaisesController {
 		paisDao = new PaisDAO();
 	}
 
-	public void adicionarPaises(Scanner scanner) {
-		String nome, capital;
-		paisesView.opcaoP();
-		nome = scanner.next();
-		paisesView.opcaoC();
-		capital = scanner.next();
-		paisDao.adicionarPais(nome, capital);
+	public void start() {
+		int opcao = 0;
+		do {
+			switch (paisesView.menu()) {
+
+			case 1:
+				adicionarPaises();
+				break;
+			case 2:
+				exibirLista();
+				break;
+			case 3:
+				removerPaises();
+				break;
+			case 4:
+				limparLista();
+				break;
+			}
+
+		} while (opcao != 5);
+		paisesView.saida();
 	}
 
-	public void removerPaises(Scanner scanner) {
-		String nome;
-		paisesView.opcaoP();
-		nome = scanner.next();
-		paisDao.removerPais(nome);
+	public void adicionarPaises() {
+		paisDao.adicionarPais(paisesView.getNome(), paisesView.getCapital());
+	}
+
+	public void removerPaises() {
+		paisDao.removerPais(paisesView.getNome());
 	}
 
 	public void limparLista() {
@@ -39,15 +54,10 @@ public class PaisesController {
 	public void exibirLista() {
 		ArrayList<Paises> listaDePaises = paisDao.exibirLista();
 		paisesView.exibirPaises(listaDePaises);
-
 	}
 
-	public int menu(Scanner scanner) {
-		return paisesView.menu(scanner);
-	}
-
-	public void saida() {
-		paisesView.saida();
+	public int menu() {
+		return paisesView.menu();
 	}
 
 }
