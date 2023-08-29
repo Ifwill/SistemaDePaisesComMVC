@@ -38,18 +38,18 @@ public class Main {
 			nomePais = lerDados.next();
 			System.out.println("Capital do pais: ");
 			capitalDoPais = lerDados.next();
-			paisesController.adicionarPaises(nomePais,capitalDoPais);
+			paisesController.adicionarPaises(nomePais, capitalDoPais);
 			break;
 		case 2:
-			paisesController.exibirListaDePaises();
+			paisesController.exibirLista();
 			break;
 		case 3:
 			System.out.println("escolha o pais que voce deseja remover:");
 			nomePais = lerDados.next();
-			paisesController.removerPaises(nomePais);
+		paisesController.removerPaises(nomePais);
 			break;
 		case 4:
-			paisesController.limparLista();
+		paisesController.limparLista();
 		}
 			
 		}while(escolhaMenu != 0);

@@ -15,5 +15,9 @@ public class PaisesView {
 			System.out.println("---------------------------");
 		}
 	}
+	
+	public void opcao() {
+		System.out.println("escolha um pais:");
+	}
 
 }
